@@ -9,9 +9,8 @@ function VerticalSeparator(props) {
         {
           borderTopColor: props.color ? props.color : '#eaeaea',
         },
-      ]}>
-      <Text>esto es un separador</Text>
-    </View>
+      ]}
+    />
   );
 }
 

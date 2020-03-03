@@ -1,12 +1,16 @@
 import React, {Component} from 'react';
-import {FlatList, Text} from 'react-native';
+import {FlatList, Text, SegmentedControlIOS} from 'react-native';
 import Layout from '../components/SuggestionListLayout';
 import Empty from '../components/Empty';
 import Separator from '../components/VerticalSeparator';
+import Suggestion from '../components/Suggestion';
 
 class SuggestionList extends Component {
   renderEmtpy = () => <Empty text="No hay sugerencias :(" />;
   itemSeparator = () => <Separator />;
+  renderItem = ({item}) => {
+    return <Suggestion {...item} />;
+  };
   render() {
     const list = [
       {
@@ -17,10 +21,6 @@ class SuggestionList extends Component {
         title: 'Pokemon',
         key: '2',
       },
-      {
-        title: 'Pokemon',
-        key: '3',
-      },
     ];
     return (
       <Layout title="Recomendado para ti">
@@ -28,7 +28,7 @@ class SuggestionList extends Component {
           data={list}
           ListEmptyComponent={this.renderEmtpy}
           ItemSeparatorComponent={this.itemSeparator}
-          renderItem={({item}) => <Text>{item.title}</Text>}
+          renderItem={this.renderItem}
         />
       </Layout>
     );
