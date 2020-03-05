@@ -6,7 +6,8 @@ import Header from './src/sections/components/Header';
 import SuggestionList from './src/videos/containers/SuggestionList';
 import CategoryList from './src/videos/containers/CategoryList';
 import API from './utils/api';
-import Video from 'react-native-video';
+// import Video from 'react-native-video';
+import YouTube from 'react-native-youtube';
 
 export default class App extends Component {
   state = {
@@ -14,14 +15,14 @@ export default class App extends Component {
     categoryList: [],
   };
   async componentDidMount() {
-    const movies = await API.getSuggestion(10);
-    const categories = await API.getMovies();
-    console.log(movies);
-    console.log(categories);
-    this.setState({
-      suggestionList: movies,
-      categoryList: categories,
-    });
+    // const movies = await API.getSuggestion(10);
+    // const categories = await API.getMovies();
+    // console.log(movies);
+    // console.log(categories);
+    // this.setState({
+    //   suggestionList: movies,
+    //   categoryList: categories,
+    // });
   }
   render() {
     return (
@@ -29,28 +30,17 @@ export default class App extends Component {
         <Header />
         {/* <Text>Recopilación de señas académicas en el área de filosofia</Text> */}
         {/* <Video source={{uri: 'https://www.youtube.com/watch?v=r-2NQzZWsaY'}} /> */}
-
-        <View
-          style={{
-            flex: 1,
-            height: 100,
-          }}>
-          <Video
-            source={{
-              uri:
-                'https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
-            }}
-            style={{
-              position: 'absolute',
-              left: 0,
-              right: 0,
-              bottom: 0,
-              top: 0,
-            }}
-            resizeMode="contain"
-          />
-        </View>
-
+        <YouTube
+          videoId="r-2NQzZWsaY" // The YouTube video ID
+          // play // control playback of video with true/false
+          fullscreen // control whether the video should play in fullscreen or inline
+          loop // control whether the video should loop when ended
+          onReady={e => this.setState({isReady: true})}
+          onChangeState={e => this.setState({status: e.state})}
+          onChangeQuality={e => this.setState({quality: e.quality})}
+          onError={e => this.setState({error: e.error})}
+          style={{alignSelf: 'stretch', height: 300}}
+        />
         <Text>buscador</Text>
         <Text>categorías</Text>
         <CategoryList list={this.state.categoryList} />
