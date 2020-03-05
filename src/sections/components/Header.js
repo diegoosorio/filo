@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image, StyleSheet, SafeAreaView} from 'react-native';
+import {View, Image, StyleSheet, SafeAreaView} from 'react-native';
 
 function Header(props) {
   return (
@@ -7,7 +7,7 @@ function Header(props) {
       <SafeAreaView>
         <View style={styles.container}>
           <Image
-            source={require('../../../assets/logo_f.png')}
+            source={require('../../../assets/logo_filoseñando.jpg')}
             style={styles.logo}
           />
           <View style={styles.right}>{props.children}</View>
@@ -19,14 +19,15 @@ function Header(props) {
 
 const styles = StyleSheet.create({
   logo: {
-    width: 100,
-    height: 26,
+    width: 80,
+    height: 80,
     resizeMode: 'contain',
   },
   container: {
-    paddingVertical: 10,
+    // paddingVertical: 10,
     paddingHorizontal: 10,
     flexDirection: 'row',
+    backgroundColor: 'white',
   },
   right: {
     flex: 1,
