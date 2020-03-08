@@ -6,7 +6,7 @@ import Header from './src/sections/components/Header';
 import SuggestionList from './src/videos/containers/SuggestionList';
 import CategoryList from './src/videos/containers/CategoryList';
 import API from './utils/api';
-import Video from 'react-native-video';
+import Player from './src/player/containers/Player';
 
 export default class App extends Component {
   state = {
@@ -27,30 +27,7 @@ export default class App extends Component {
     return (
       <Home>
         <Header />
-        {/* <Text>Recopilación de señas académicas en el área de filosofia</Text> */}
-        {/* <Video source={{uri: 'https://www.youtube.com/watch?v=r-2NQzZWsaY'}} /> */}
-
-        <View
-          style={{
-            flex: 1,
-            height: 100,
-          }}>
-          <Video
-            source={{
-              uri:
-                'https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
-            }}
-            style={{
-              position: 'absolute',
-              left: 0,
-              right: 0,
-              bottom: 0,
-              top: 0,
-            }}
-            resizeMode="contain"
-          />
-        </View>
-
+        <Player />
         <Text>buscador</Text>
         <Text>categorías</Text>
         <CategoryList list={this.state.categoryList} />
