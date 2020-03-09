@@ -11,7 +11,7 @@ class LetterList extends Component {
   renderEmtpy = () => <Empty text="No hay sugerencias :(" />;
   itemSeparator = () => <Separator />;
   renderItem = ({item}) => {
-    return <Letter {...item} />;
+    return <Letter {...item} onLetterPress={this.props.onLetterPress} />;
   };
   render() {
     return (

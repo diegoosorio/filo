@@ -3,7 +3,9 @@ import {Text, StyleSheet, TouchableOpacity} from 'react-native';
 
 function Letter(props) {
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => props.onLetterPress(props.letter)}>
       <Text style={styles.letter}>{props.letter}</Text>
     </TouchableOpacity>
   );

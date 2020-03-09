@@ -9,8 +9,11 @@ class SuggestionList extends Component {
   keyExtractor = item => item.id.toString();
   renderEmtpy = () => <Empty text="No hay sugerencias :(" />;
   itemSeparator = () => <Separator />;
+  viewMovie = item => {};
   renderItem = ({item}) => {
-    return <Suggestion {...item} />;
+    return (
+      <Suggestion {...item} onVideoSelected={this.props.onVideoSelected} />
+    );
   };
   render() {
     return (
