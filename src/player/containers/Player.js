@@ -1,12 +1,27 @@
 import React, {Component} from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, ActivityIndicator} from 'react-native';
 import Video from 'react-native-video';
 import Layout from '../components/Layout';
 
 class Player extends Component {
+  state = {
+    loading: true,
+  };
+
+  onBuffer = ({isBuffering}) => {
+    this.setState({
+      loading: isBuffering,
+    });
+  };
+  onLoad = () => {
+    this.setState({
+      loading: false,
+    });
+  }
   render() {
     return (
       <Layout
+        loading={this.state.loading}
         video={
           <Video
             source={{
@@ -15,8 +30,12 @@ class Player extends Component {
             }}
             style={styles.video}
             resizeMode="contain"
+            onBuffer={this.onBuffer}
+            onLoad={this.onLoad}
+            // muted={true}
           />
         }
+        loader={<ActivityIndicator color="red" />}
       />
     );
   }
