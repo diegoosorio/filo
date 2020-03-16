@@ -1,35 +1,22 @@
 import React from 'react';
-import {
-  TouchableHighlight,
-  TouchableOpacity,
-  TouchableWithoutFeedback,
-  StyleSheet,
-  Text,
-  Image,
-} from 'react-native';
+import {Text, View, Image, StyleSheet, TouchableOpacity} from 'react-native';
 
-function PlayPause(props) {
+function FullScreen(props) {
   return (
     <TouchableOpacity
       onPress={props.onPress}
       style={styles.container}
+      // underlayColor="red"
       hitSlop={{
         left: 5,
         top: 5,
         bottom: 5,
         right: 5,
       }}>
-      {props.paused ? (
-        <Image
-          style={styles.button}
-          source={require('../../../utils/images/play.png')}
-        />
-      ) : (
-        <Image
-          style={styles.button}
-          source={require('../../../utils/images/pause.png')}
-        />
-      )}
+      <Image
+        style={styles.button}
+        source={require('../../../utils/images/expand.png')}
+      />
     </TouchableOpacity>
   );
 }
@@ -49,4 +36,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PlayPause;
+export default FullScreen;

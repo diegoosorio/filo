@@ -8,26 +8,27 @@ import {
   Image,
 } from 'react-native';
 
-function PlayPause(props) {
+function MuteSound(props) {
   return (
     <TouchableOpacity
       onPress={props.onPress}
       style={styles.container}
+      // underlayColor="red"
       hitSlop={{
         left: 5,
         top: 5,
         bottom: 5,
         right: 5,
       }}>
-      {props.paused ? (
+      {props.mute ? (
         <Image
           style={styles.button}
-          source={require('../../../utils/images/play.png')}
+          source={require('../../../utils/images/mute.png')}
         />
       ) : (
         <Image
           style={styles.button}
-          source={require('../../../utils/images/pause.png')}
+          source={require('../../../utils/images/sound.png')}
         />
       )}
     </TouchableOpacity>
@@ -49,4 +50,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PlayPause;
+export default MuteSound;

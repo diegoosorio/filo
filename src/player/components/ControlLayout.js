@@ -14,9 +14,9 @@ const styles = StyleSheet.create({
     bottom: 0,
     height: 35,
     flexDirection: 'row',
-    paddingHorizontal: 10,
+    paddingHorizontal: 5,
     alignItems: 'center',
-  }
-})
+  },
+});
 
 export default ControlLayout;
