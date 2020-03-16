@@ -13,7 +13,7 @@ class Player extends Component {
   state = {
     loading: true,
     paused: false,
-    mute: false,
+    mute: true,
     duration: 0.0,
     progress: 0.0,
     currentTime: 0.0,
