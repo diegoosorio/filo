@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
-import YouTube, {YouTubeStandaloneIOS, YouTubeStandaloneAndroid} from 'react-native-youtube';
+import YouTube, {
+  YouTubeStandaloneIOS,
+  YouTubeStandaloneAndroid,
+} from 'react-native-youtube';
 import {View, Text, StyleSheet} from 'react-native';
 import Layout from '../components/Layout';
 
@@ -17,6 +20,8 @@ class Player extends Component {
     // playerWidth: Dimensions.get('window').width,
   };
 
+  _youTubeRef = React.createRef();
+
   render() {
     return (
       <Layout
@@ -27,11 +32,13 @@ class Player extends Component {
             // play // control playback of video with true/false
             // fullscreen // control whether the video should play in fullscreen or inline
             loop // control whether the video should loop when ended
-            onReady={e => this.setState({ isReady: true })}
-            onChangeState={e => this.setState({ status: e.state })}
-            onChangeQuality={e => this.setState({ quality: e.quality })}
-            onError={e => this.setState({ error: e.error })}
+            onReady={e => this.setState({isReady: true})}
+            onChangeState={e => this.setState({status: e.state})}
+            onChangeQuality={e => this.setState({quality: e.quality})}
+            onError={e => this.setState({error: e.error})}
             style={styles.video}
+            // controls={2}
+            showFullscreenButton={false}
           />
         }
       />
@@ -46,7 +53,7 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
     top: 0,
-  }
-})
+  },
+});
 
 export default Player;

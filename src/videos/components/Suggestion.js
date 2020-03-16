@@ -11,7 +11,7 @@ function Suggestion(props) {
 
         <View style={styles.right}>
           <Text style={styles.title}>{props.nombre}</Text>
-          <Text style={styles.year}>{props.origen}</Text>
+          <Text style={styles.origen}>{props.origen}</Text>
         </View>
       </View>
     </TouchableOpacity>
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: '#44546b',
   },
-  year: {
+  origen: {
     backgroundColor: '#44546b',
     paddingVertical: 4,
     paddingHorizontal: 6,
