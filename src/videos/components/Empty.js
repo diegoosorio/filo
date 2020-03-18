@@ -10,14 +10,20 @@ function VerticalSeparator(props) {
           borderTopColor: props.color ? props.color : '#eaeaea',
         },
       ]}>
-      <Text>esto es un separador</Text>
+      <Text>{props.text}</Text>
+      <Text>Seleccione una letra de la lista</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   separator: {
+    // height: 200,
+    // backgroundColor: 'yellow',
     borderTopWidth: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 20,
   },
 });
 

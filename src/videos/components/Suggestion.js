@@ -3,7 +3,7 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
 function Suggestion(props) {
   return (
-    <TouchableOpacity onPress={() => props.onVideoSelected(props)}>
+    <TouchableOpacity onPress={() => props.onVideoSelected(props, true)}>
       <View style={styles.container}>
         <View style={styles.left}>
           <Text style={styles.letra}>{props.letra}</Text>
@@ -43,7 +43,8 @@ const styles = StyleSheet.create({
     height: 100,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#44546b',
+    backgroundColor: '#1185da',
+    // backgroundColor: '#44546b',
   },
   right: {
     paddingLeft: 10,
@@ -54,7 +55,8 @@ const styles = StyleSheet.create({
     color: '#44546b',
   },
   origen: {
-    backgroundColor: '#44546b',
+    // backgroundColor: '#44546b',
+    backgroundColor: '#1185da',
     paddingVertical: 4,
     paddingHorizontal: 6,
     color: 'white',

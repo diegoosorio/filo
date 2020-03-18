@@ -4,7 +4,7 @@ import {Text, StyleSheet, ImageBackground} from 'react-native';
 function CategoryListLayout(props) {
   return (
     <ImageBackground
-      source={require('../../../assets/backgronund.png')}
+      // source={require('../../../assets/backgronund.png')}
       style={styles.container}>
       <Text style={styles.title}>{props.title}</Text>
       {props.children}
@@ -16,6 +16,8 @@ const styles = StyleSheet.create({
   container: {
     paddingVertical: 30,
     paddingHorizontal: 10,
+    // backgroundColor: '#2dadec'
+    backgroundColor: '#DFDFDF',
   },
   title: {
     color: '#4c4c4c',

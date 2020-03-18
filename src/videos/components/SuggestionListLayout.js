@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 10,
     flex: 1,
+    // backgroundColor: 'green',
   },
   title: {
     color: '#4c4c4c',
