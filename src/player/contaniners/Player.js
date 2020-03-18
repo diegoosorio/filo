@@ -27,7 +27,7 @@ class Player extends Component {
       <Layout
         video={
           <YouTube
-            apiKey="AIzaSyAevxh35kByY20tI5f2wn8VqRUKIpK-qb8"
+            apiKey
             videoId={this.props.video.idVideo} // The YouTube video ID
             // play // control playback of video with true/false
             // fullscreen // control whether the video should play in fullscreen or inline
