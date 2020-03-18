@@ -7,7 +7,7 @@ function Header(props) {
       <SafeAreaView>
         <View style={styles.container}>
           <Image
-            source={require('../../../assets/logo_filoseñando_2.jpg')}
+            source={require('../../../assets/logo_f_2.png')}
             style={styles.logo}
           />
           <View style={styles.right}>{props.children}</View>
@@ -19,8 +19,8 @@ function Header(props) {
 
 const styles = StyleSheet.create({
   logo: {
-    width: 200,
-    height: 70,
+    width: 170,
+    height: 60,
     resizeMode: 'contain',
   },
   container: {
